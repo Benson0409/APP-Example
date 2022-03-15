@@ -41,12 +41,14 @@ const PopularList = () => {
 
 const styles = StyleSheet.create({
   sectionHeader: {
-    fontWeight: "600",
-    fontSize: 18,
+    fontWeight: "800",
+    fontSize: 28,
     paddingTop: 20,
     paddingBottom: 5,
     paddingLeft: 10,
-    textTransform: "uppercase",
+    // textTransform: "uppercase",
+    // margin: 20,
+    fontFamily: "Roboto",
   },
 });
 

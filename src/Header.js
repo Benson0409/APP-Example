@@ -4,14 +4,14 @@ import { StyleSheet, Text, View } from "react-native";
 const Header = () => {
   return (
     <View style={styles.headerStyle}>
-      <Text style={styles.textStyle}>JJ 精 選 專 輯 </Text>
+      <Text style={styles.textStyle}>Top Bar</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   headerStyle: {
-    backgroundColor: "black",
+    backgroundColor: "white",
     justifyContent: "center",
     alignItems: "center",
     height: 60,
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     fontSize: 40,
-    color: "#FFF",
+    color: "#000",
     fontWeight: "bold",
   },
 });

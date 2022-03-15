@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 const Popular = (props) => {
   let { album } = props;
   return (
-    <View style={{ flexDirection: "column" }}>
+    <View style={{ flexDirection: "column", marginLeft: 20 }}>
       <View style={styles.cardContainerStyle}>
         <View style={styles.cardSectionStyle}>
           <Image style={styles.imageStyle} source={{ uri: album.image }} />
@@ -20,16 +20,16 @@ const Popular = (props) => {
 
 const styles = StyleSheet.create({
   cardContainerStyle: {
-    borderWidth: 1,
-    borderRadius: 2,
-    borderColor: "#ddd",
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 2 },
-    shadowOpacity: 0.1,
-    shadowRadius: 2,
-    elevation: 1,
-    marginLeft: 5,
-    marginRight: 5,
+    // borderWidth: 1,
+    // borderRadius: 2,
+    // borderColor: "#ddd",
+    // shadowColor: "#000",
+    // shadowOffset: { width: 0, height: 2 },
+    // shadowOpacity: 0.1,
+    // shadowRadius: 2,
+    // elevation: 1,
+    // marginLeft: 5,
+    // marginRight: 16,
     marginTop: 10,
   },
   headerContainerStyle: {
@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
   },
   headerTitleStyle: {
     fontSize: 16,
-    fontWeight: "normal",
+    fontWeight: "600",
+    width: 140,
   },
   headerContentStyle: {
     fontSize: 12,
@@ -52,13 +53,17 @@ const styles = StyleSheet.create({
   },
   cardSectionStyle: {
     padding: 5,
-    backgroundColor: "#fff",
-    borderColor: "#ddd",
-    borderBottomWidth: 1,
+    // backgroundColor: "#fff",
+    // borderColor: "#ddd",
+    // borderBottomWidth: 1,
   },
   imageStyle: {
-    height: 200,
-    width: 140,
+    height: 240,
+    width: 160,
+    borderTopRightRadius: 6,
+    borderBottomRightRadius: 6,
+    // marginRight: 16,
+    paddingRight: 16,
   },
 });
 
