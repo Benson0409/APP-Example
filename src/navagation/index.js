@@ -5,7 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import BookScreen from "../Screen/BookScreen";
 import Detail from "../Screen/Detail";
 
-import albumData from "../json/albums.json";
+import albumData from "../popular.json";
 
 const Stack = createNativeStackNavigator();
 

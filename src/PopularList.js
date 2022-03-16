@@ -1,10 +1,10 @@
 import React from "react";
 import { Text, FlatList, SectionList, StyleSheet } from "react-native";
-import PopularDetail from "./PopularDetail";
+// import PopularDetail from "./PopularDetail";
 import Popular from "./Popular";
 import sections from "./popular.json";
 
-const PopularList = () => {
+const PopularList = ({ list, navigation }) => {
   const renderSectionHeader = ({ section }) => (
     <>
       <Text style={styles.sectionHeader}>{section.title}</Text>
@@ -12,7 +12,9 @@ const PopularList = () => {
         <FlatList
           horizontal={true}
           data={section.data}
-          renderItem={({ item }) => <Popular album={item} />}
+          renderItem={({ item }) => (
+            <Popular book={item} navigation={navigation} />
+          )}
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => item.title}
         />
@@ -21,15 +23,14 @@ const PopularList = () => {
   );
 
   const renderItem = ({ item, section }) => {
-    if (section.horizontal) {
-      return null;
-    }
-    return <PopularDetail album={item} />;
+    return null;
   };
   return (
     <SectionList
       sections={sections}
-      contentContainerStyle={{ paddingHorizontal: 10 }}
+      contentContainerStyle={{
+        paddingHorizontal: 10,
+      }}
       stickySectionHeadersEnabled={false}
       showsHorizontalScrollIndicator={false}
       renderSectionHeader={renderSectionHeader}

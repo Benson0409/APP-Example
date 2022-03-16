@@ -1,18 +1,27 @@
 import React from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Pressable,
+  Linking,
+} from "react-native";
 
-const Popular = (props) => {
-  let { album } = props;
+const Popular = ({ book, navigation }) => {
+  //let { album } = props;
   return (
     <View style={{ flexDirection: "column", marginLeft: 20 }}>
       <View style={styles.cardContainerStyle}>
-        <View style={styles.cardSectionStyle}>
-          <Image style={styles.imageStyle} source={{ uri: album.image }} />
-        </View>
+        <Pressable onPress={() => navigation.navigate("Detail", book)}>
+          <View style={styles.cardSectionStyle}>
+            <Image style={styles.imageStyle} source={{ uri: book.image }} />
+          </View>
+        </Pressable>
       </View>
       <View style={styles.headerContainerStyle}>
-        <Text style={styles.headerTitleStyle}>{album.title}</Text>
-        <Text style={styles.headerContentStyle}>{album.artist}</Text>
+        <Text style={styles.headerTitleStyle}>{book.title}</Text>
+        <Text style={styles.headerContentStyle}>{book.artist}</Text>
       </View>
     </View>
   );
@@ -27,7 +36,7 @@ const styles = StyleSheet.create({
     // shadowOffset: { width: 0, height: 2 },
     // shadowOpacity: 0.1,
     // shadowRadius: 2,
-    // elevation: 1,
+    // elevation: 2,
     // marginLeft: 5,
     // marginRight: 16,
     marginTop: 10,
