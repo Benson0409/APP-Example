@@ -2,8 +2,8 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import bookScreen from "../Screen/bookScreen";
-import detail from "../Screen/detail";
+import BookScreen from "../Screen/BookScreen";
+import Detail from "../Screen/Detail";
 
 import albumData from "../json/albums.json";
 
@@ -22,7 +22,7 @@ const StackNavigator = () => {
     <Stack.Navigator>
       <Stack.Screen
         name="Home"
-        component={bookScreen}
+        component={BookScreen}
         options={{
           title: albumData.albumTitle,
           headerTitleStyle: {
@@ -33,7 +33,7 @@ const StackNavigator = () => {
       />
       <Stack.Screen
         name="Detail"
-        component={detail}
+        component={Detail}
         options={({ route }) => ({
           title: route.params.title,
           headerStyle: {

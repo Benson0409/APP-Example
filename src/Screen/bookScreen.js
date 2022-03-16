@@ -3,7 +3,7 @@ import { View } from "react-native";
 import PopularList from "../PopularList";
 import albumData from "../popular.json";
 
-const bookScreen = ({ navigation }) => {
+const BookScreen = ({ navigation }) => {
   return (
     <View style={{ flex: 1 }}>
       <PopularList list={albumData.albumList} navigation={navigation} />
@@ -11,4 +11,4 @@ const bookScreen = ({ navigation }) => {
   );
 };
 
-export default bookScreen;
+export default BookScreen;

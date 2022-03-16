@@ -2,6 +2,7 @@ import { StyleSheet, StatusBar, SafeAreaView, FlatList } from "react-native";
 //import { StyleSheet, Text, View } from "react-native";
 import Header from "./src/Header";
 import PopularList from "./src/PopularList";
+//import Navigation from "./src/navagation";
 
 export default function App() {
   return (

@@ -9,7 +9,7 @@ import {
   Linking,
 } from "react-native";
 
-const detail = ({ route }) => {
+const Detail = ({ route }) => {
   const { title, artist, price, url, image, description } = route.params;
   return (
     <ScrollView>
@@ -76,4 +76,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default detail;
+export default Detail;
