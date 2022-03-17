@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import PopularList from "../PopularList";
+import PopularList from "../PopularFolder/PopularList";
 import albumData from "../popular.json";
 
 const BookScreen = ({ navigation }) => {

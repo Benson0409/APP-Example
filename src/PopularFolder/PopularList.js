@@ -2,7 +2,7 @@ import React from "react";
 import { Text, FlatList, SectionList, StyleSheet } from "react-native";
 // import PopularDetail from "./PopularDetail";
 import Popular from "./Popular";
-import sections from "./popular.json";
+import sections from "../popular.json";
 
 const PopularList = ({ list, navigation }) => {
   const renderSectionHeader = ({ section }) => (
