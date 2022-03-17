@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
   imageStyle: {
     height: 300,
     width: 210,
+    alignSelf: "center",
   },
   cardContainerStyle: {
     // backgroundColor: "white",
