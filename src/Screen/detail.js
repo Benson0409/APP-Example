@@ -10,7 +10,7 @@ import {
 } from "react-native";
 
 const Detail = ({ route }) => {
-  const { title, artist, price, url, image, description } = route.params;
+  const { title, artist, price, url, image, descriptions } = route.params;
   return (
     <ScrollView>
       <View>
@@ -22,11 +22,12 @@ const Detail = ({ route }) => {
         />
       </View>
       <View style={styles.cardContainerStyle}>
-        <Text style={styles.discountStyle}>Discount Now!</Text>
-        <Text style={styles.priceStyle}>Price: ${price}</Text>
+        <Text style={styles.titleIntroduce}>{title}</Text>
+        <Text style={styles.introduceStyle}>{artist}</Text>
+        <Text style={styles.describeStyle}>{descriptions}</Text>
         <Button onPress={() => Linking.openURL(url)} title="Buy Now !" />
       </View>
-      <View style={styles.cardContainerStyle}>
+      {/* <View style={styles.cardContainerStyle}>
         <Text>
           <Text style={{ fontWeight: "bold" }}>Artist: </Text>
           {artist}
@@ -40,7 +41,7 @@ const Detail = ({ route }) => {
           {"\t"}
           {description}
         </Text>
-      </View>
+      </View> */}
     </ScrollView>
   );
 };
@@ -48,31 +49,39 @@ const Detail = ({ route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "white",
     alignItems: "center",
     justifyContent: "center",
   },
   imageStyle: {
-    height: 200,
-    width: null,
+    height: 300,
+    width: 210,
   },
   cardContainerStyle: {
-    backgroundColor: "#fff",
+    // backgroundColor: "white",
     padding: 10,
     marginHorizontal: 10,
     marginTop: 10,
   },
-  discountStyle: {
-    color: "#6099E4",
+  titleIntroduce: {
+    color: "black",
     textAlign: "center",
-    fontSize: 25,
+    fontSize: 24,
     fontWeight: "bold",
+    fontFamily: "Roboto",
   },
-  priceStyle: {
-    fontWeight: "bold",
+  introduceStyle: {
+    fontWeight: "400",
     textAlign: "center",
-    fontSize: 40,
+    fontSize: 14,
     marginVertical: 20,
+    fontFamily: "Roboto",
+    color: "gray",
+  },
+  describeStyle: {
+    fontSize: 14,
+    fontWeight: "400",
+    fontFamily: "Roboto",
   },
 });
 

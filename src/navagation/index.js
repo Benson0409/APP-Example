@@ -24,6 +24,7 @@ const StackNavigator = () => {
         name="Home"
         component={BookScreen}
         options={{
+          headerShown: false,
           title: albumData.albumTitle,
           headerTitleStyle: {
             fontWeight: "400",
@@ -35,6 +36,7 @@ const StackNavigator = () => {
         name="Detail"
         component={Detail}
         options={({ route }) => ({
+          // headerShown: false,
           title: route.params.title,
           headerStyle: {
             backgroundColor: "#fff",
