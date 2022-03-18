@@ -63,7 +63,7 @@ const MyTabs = () => {
           headerShown: false,
           title: "My books",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="read" color={color} size={26} />
+            <MaterialCommunityIcons name="book-open" color={color} size={26} />
           ),
         }}
       />
