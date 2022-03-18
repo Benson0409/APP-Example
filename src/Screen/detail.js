@@ -8,9 +8,10 @@ import {
   Button,
   Linking,
 } from "react-native";
+import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 
 const Detail = ({ route }) => {
-  const { title, artist, price, url, image, descriptions } = route.params;
+  const { title, artist, price, url, image, descriptions, star } = route.params;
   return (
     <ScrollView>
       <View>
@@ -24,8 +25,16 @@ const Detail = ({ route }) => {
       <View style={styles.cardContainerStyle}>
         <Text style={styles.titleIntroduce}>{title}</Text>
         <Text style={styles.introduceStyle}>{artist}</Text>
+        {/* <View>
+          <Image style={{ width: 30, height: 20 }} sourcr={{ uri: star }} />
+        </View> */}
         <Text style={styles.describeStyle}>{descriptions}</Text>
-        <Button onPress={() => Linking.openURL(url)} title="Buy Now !" />
+        <Pressable
+          onPress={() => Linking.openURL(url)}
+          style={styles.buttonStyle}
+        >
+          <Text style={styles.buttonTextStyle}>Buy Now for $46.99</Text>
+        </Pressable>
       </View>
       {/* <View style={styles.cardContainerStyle}>
         <Text>
@@ -80,9 +89,28 @@ const styles = StyleSheet.create({
     color: "gray",
   },
   describeStyle: {
-    fontSize: 14,
+    fontSize: 18,
     fontWeight: "400",
     fontFamily: "Roboto",
+    lineHeight: 24,
+    textAlign: "center",
+    color: "#131313",
+  },
+  buttonStyle: {
+    width: 190,
+    height: 36,
+    // color: "pink",
+    backgroundColor: "#6200EE",
+    alignSelf: "center",
+    marginTop: 28,
+    borderRadius: 4,
+  },
+  buttonTextStyle: {
+    color: "#fff",
+    textAlign: "center",
+    lineHeight: 35,
+    letterSpacing: 1.2,
+    fontWeight: "500",
   },
 });
 

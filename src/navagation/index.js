@@ -37,8 +37,9 @@ const MyTabs = () => {
         options={{
           headerShown: false,
           title: "Home",
+
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={26} />
+            <MaterialCommunityIcons name="home" color={color} size={30} />
           ),
         }}
       />
@@ -46,13 +47,14 @@ const MyTabs = () => {
         name="Wishlist"
         component={StackNavigator}
         options={{
+          headerShown: false,
           title: "Wishlist",
           headerTitleStyle: {
             fontWeight: "400",
             fontSize: 20,
           },
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bookmark" color={color} size={26} />
+            <MaterialCommunityIcons name="bookmark" color={color} size={30} />
           ),
         }}
       />
@@ -63,7 +65,7 @@ const MyTabs = () => {
           headerShown: false,
           title: "My books",
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="book-open" color={color} size={26} />
+            <MaterialCommunityIcons name="book-open" color={color} size={30} />
           ),
         }}
       />
@@ -91,6 +93,7 @@ const StackNavigator = () => {
         component={Detail}
         options={({ route }) => ({
           // headerShown: false,
+          // backgroundColor: "black",
           title: route.params.title,
           headerStyle: {
             backgroundColor: "#fff",
