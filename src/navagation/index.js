@@ -74,7 +74,7 @@ const MyTabs = () => {
     <Tab.Navigator
       initialRouteName="StackNavigator"
       screenOptions={{
-        tabBarActiveTintColor: "purple",
+        tabBarActiveTintColor: "#6200EE",
         headerShown: false,
       }}
     >

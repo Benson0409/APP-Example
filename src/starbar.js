@@ -10,19 +10,104 @@ import {
 } from "react-native";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { Icon } from "react-native-elements";
-// const star = ({ route }) => {
-//   const { star } = route.params;
-//   return (
-//     <View>
-//       if({star}==1){
-//           <Icon name="star" color="yellow" />
-//           }
-//       else if({star}==2)
-//       {
-//           <Icon name="star" color="yellow" />
-//           <Icon name="star" color="yellow" />
-//           }
-//     </View>
-//   );
-// };
+import albumData from "./popular.json";
+const Starbar = (props) => {
+    const starDecide=(props)=>{
+    if({props.star}==1)
+      {
+        <View>
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons
+            name="star-outline"
+            color={"#EDEDEF"}
+            size={30}
+          />
+          <MaterialCommunityIcons
+            name="star-outline"
+            color={"#EDEDEF"}
+            size={30}
+          />
+          <MaterialCommunityIcons
+            name="star-outline"
+            color={"#EDEDEF"}
+            size={30}
+          />
+          <MaterialCommunityIcons
+            name="star-outline"
+            color={"#EDEDEF"}
+            size={30}
+          />
+        </View>
+      }
+      else if({props.star}==2)
+      {
+        <View>
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons
+            name="star-outline"
+            color={"#EDEDEF"}
+            size={30}
+          />
+          <MaterialCommunityIcons
+            name="star-outline"
+            color={"#EDEDEF"}
+            size={30}
+          />
+          <MaterialCommunityIcons
+            name="star-outline"
+            color={"#EDEDEF"}
+            size={30}
+          />
+        </View>
+      }
+      else if({props.star}==3)
+      {
+        <View>
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons
+            name="star-outline"
+            color={"#EDEDEF"}
+            size={30}
+          />
+          <MaterialCommunityIcons
+            name="star-outline"
+            color={"#EDEDEF"}
+            size={30}
+          />
+        </View>
+      }
+      else if({props.star}==4)
+      {
+        <View>
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons
+            name="star-outline"
+            color={"#EDEDEF"}
+            size={30}
+          />
+        </View>
+      }
+      else if({props.star}==5)
+      {
+        <View>
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+          <MaterialCommunityIcons name="star" color={"#FFC41F"} size={30} />
+        </View>
+      }
+      else{null}
+    };
+  return (
+    starDecide()
+  );
+};
+
+export default Starbar;

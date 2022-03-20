@@ -8,6 +8,8 @@ import {
   Linking,
 } from "react-native";
 
+import Starbar from "../Starbar";
+import ablumData from "../popular.json";
 const Popular = ({ book, navigation }) => {
   //let { album } = props;
   return (
@@ -20,6 +22,7 @@ const Popular = ({ book, navigation }) => {
         </Pressable>
       </View>
       <View style={styles.headerContainerStyle}>
+        <Starbar star={book.star} />
         <Text style={styles.headerTitleStyle}>{book.title}</Text>
         <Text style={styles.headerContentStyle}>{book.artist}</Text>
       </View>

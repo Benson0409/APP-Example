@@ -6,6 +6,7 @@
       {
         "title": "Fashionopolis",
         "artist": "Dana Thomas",
+        "star": null,
         "url": "https://www.amazon.com/Taylor-Swift/dp/B0014I4KH6",
         "image": "https://github.com/Benson0409/APP-Example/blob/master/img/img_book_fashinopolis.png?raw=true",
         "thumbnail_image": "https://i.imgur.com/K3KJ3w4h.jpg",
@@ -14,6 +15,7 @@
       {
         "title": "Chanel",
         "artist": "Patrick Mauriès",
+        "star": null,
         "url": "https://www.amazon.com/Fearless-Enhanced-Taylor-Swift/dp/B001EYGOEM",
         "image": "https://github.com/Benson0409/APP-Example/blob/master/img/img_book_chanel.png?raw=true",
         "thumbnail_image": "https://i.imgur.com/K3KJ3w4h.jpg",
@@ -22,6 +24,7 @@
       {
         "title": "Calligraphy",
         "artist": "June & Lucy",
+        "star": null,
         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
         "image": "https://github.com/Benson0409/APP-Example/blob/master/img/img_book_calligraphy.png?raw=true",
         "thumbnail_image": "https://i.imgur.com/K3KJ3w4h.jpg",
@@ -45,6 +48,7 @@
       {
         "title": "The Book of Signs",
         "artist": "Rudolf Koch ",
+        "star": 3,
         "url": "https://www.amazon.com/Fearless-Enhanced-Taylor-Swift/dp/B001EYGOEM",
         "image": "https://github.com/Benson0409/APP-Example/blob/master/img/img_book_tbos.png?raw=true",
         "thumbnail_image": "https://i.imgur.com/K3KJ3w4h.jpg",
@@ -53,6 +57,7 @@
       {
         "title": "Stitched Up",
         "artist": "Tansy E. Hoskins",
+        "star": 3,
         "url": "https://www.amazon.com/Speak-Now-Taylor-Swift/dp/B003WTE886",
         "image": "https://github.com/Benson0409/APP-Example/blob/master/img/img_book_stitchedup.png?raw=true",
         "thumbnail_image": "https://i.imgur.com/K3KJ3w4h.jpg",
