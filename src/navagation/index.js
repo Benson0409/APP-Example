@@ -6,10 +6,14 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
+import { View, underlayColor } from "react-native";
+
 import BookScreen from "../Screen/BookScreen";
 import Detail from "../Screen/Detail";
 
 import albumData from "../popular.json";
+//import { color } from "react-native/Libraries/Components/View/ReactNativeStyleAttributes";
+import { TouchableHighlight } from "react-native-gesture-handler";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -127,13 +131,30 @@ const StackNavigator = () => {
         name="Home"
         component={BookScreen}
         options={{
-          headerShown: false,
-
+          // headerShown: false,
+          headerShadowVisible: false,
           title: albumData.albumTitle,
           headerTitleStyle: {
             fontWeight: "400",
             fontSize: 20,
+            color: "white",
           },
+
+          headerRight: () => (
+            <TouchableHighlight underlayColor="yellow">
+              <MaterialCommunityIcons
+                name="magnify"
+                color={"gray"}
+                onPress={() => alert("Search!!!")}
+                size={30}
+              />
+            </TouchableHighlight>
+          ),
+          headerLeft: () => (
+            <TouchableHighlight underlayColor="yellow">
+              <MaterialCommunityIcons name="menu" color={"gray"} size={30} />
+            </TouchableHighlight>
+          ),
         }}
       />
       <Stack.Screen
@@ -154,14 +175,26 @@ const StackNavigator = () => {
             fontSize: 20,
             color: "white",
           },
+          headerRight: () => (
+            <TouchableHighlight underlayColor="yellow">
+              <MaterialCommunityIcons
+                name="bookmark-outline"
+                color={"gray"}
+                onPress={() => alert("Like!")}
+                size={30}
+              />
+            </TouchableHighlight>
+          ),
+
           // headerLeft: () => (
-          //   <TouchableOpacity
+          //   <MaterialCommunityIcons
+          //     name="bookmark-outline"
+          //     color={"gray"}
+          //     size={30}
           //     onPress={() => {
           //       Navigation.goBack();
           //     }}
-          //   >
-          //     <Icon name="home" />
-          //   </TouchableOpacity>
+          //   />
           // ),
         })}
       />

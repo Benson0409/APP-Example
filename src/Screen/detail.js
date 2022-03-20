@@ -10,6 +10,7 @@ import {
 } from "react-native";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import Starbar from "../Starbar";
 
 const Detail = ({ route }) => {
   const { title, artist, price, url, image, descriptions, star } = route.params;
@@ -26,7 +27,17 @@ const Detail = ({ route }) => {
       <View style={styles.cardContainerStyle}>
         <Text style={styles.titleIntroduce}>{title}</Text>
         <Text style={styles.introduceStyle}>{artist}</Text>
+        <View style={styles.scoreStyle}>
+          <Starbar star={star} />
 
+          <Text>
+            {star != null ? (
+              <Text>
+                {star}.0 <Text style={{ color: "gray" }}>/ 5.0</Text>
+              </Text>
+            ) : null}
+          </Text>
+        </View>
         {/* <MaterialCommunityIcons name="book-open" color={"red"} size={30} /> */}
         {/* <View>
           <Image style={{ width: 30, height: 20 }} sourcr={{ uri: star }} />
@@ -93,12 +104,13 @@ const styles = StyleSheet.create({
     color: "gray",
   },
   describeStyle: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "400",
     fontFamily: "Roboto",
     lineHeight: 24,
     textAlign: "center",
     color: "#131313",
+    letterSpacing: 0.8,
   },
   buttonStyle: {
     width: 190,
@@ -115,6 +127,15 @@ const styles = StyleSheet.create({
     lineHeight: 35,
     letterSpacing: 1.2,
     fontWeight: "500",
+  },
+  scoreStyle: {
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  scoreTextStyle: {
+    fontSize: 14,
+    fontFamily: "Roboto",
+    fontWeight: "400",
   },
 });
 

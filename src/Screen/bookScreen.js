@@ -5,7 +5,7 @@ import albumData from "../popular.json";
 
 const BookScreen = ({ navigation }) => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: "white" }}>
       <PopularList list={albumData.albumList} navigation={navigation} />
     </View>
   );
