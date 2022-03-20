@@ -2,6 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
@@ -12,13 +13,59 @@ import albumData from "../popular.json";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 const Navigation = () => {
   return (
     <NavigationContainer>
       {/* <StackNavigator /> */}
       <MyTabs />
+      {/* <MyDrawer /> */}
     </NavigationContainer>
+  );
+};
+
+const MyDrawer = () => {
+  return (
+    <Drawer.Navigator initialRouteName="StackNavigator">
+      <Drawer.Screen
+        name="StackNavigator"
+        component={StackNavigator}
+        options={{
+          headerShown: false,
+          title: "Home",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="home" color={color} size={30} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="Wishlist"
+        component={StackNavigator}
+        options={{
+          headerShown: false,
+          title: "Settings",
+          headerTitleStyle: {
+            fontWeight: "400",
+            fontSize: 20,
+          },
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="bookmark" color={color} size={30} />
+          ),
+        }}
+      />
+      <Drawer.Screen
+        name="My books"
+        component={StackNavigator}
+        options={{
+          headerShown: false,
+          title: "My books",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="book-open" color={color} size={30} />
+          ),
+        }}
+      />
+    </Drawer.Navigator>
   );
 };
 
@@ -81,6 +128,7 @@ const StackNavigator = () => {
         component={BookScreen}
         options={{
           headerShown: false,
+
           title: albumData.albumTitle,
           headerTitleStyle: {
             fontWeight: "400",
@@ -94,15 +142,27 @@ const StackNavigator = () => {
         options={({ route }) => ({
           // headerShown: false,
           // backgroundColor: "black",
+          headerShadowVisible: false,
           title: route.params.title,
           headerStyle: {
-            backgroundColor: "#fff",
+            backgroundColor: "white",
           },
-          headerTintColor: "#000",
+          headerTintColor: "black",
+
           headerTitleStyle: {
             fontWeight: "400",
             fontSize: 20,
+            color: "white",
           },
+          // headerLeft: () => (
+          //   <TouchableOpacity
+          //     onPress={() => {
+          //       Navigation.goBack();
+          //     }}
+          //   >
+          //     <Icon name="home" />
+          //   </TouchableOpacity>
+          // ),
         })}
       />
     </Stack.Navigator>

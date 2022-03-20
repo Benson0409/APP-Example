@@ -9,11 +9,12 @@ import {
   Linking,
 } from "react-native";
 import Pressable from "react-native/Libraries/Components/Pressable/Pressable";
+import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
 const Detail = ({ route }) => {
   const { title, artist, price, url, image, descriptions, star } = route.params;
   return (
-    <ScrollView>
+    <ScrollView style={{ backgroundColor: "white" }}>
       <View>
         <Image
           style={styles.imageStyle}
@@ -25,6 +26,8 @@ const Detail = ({ route }) => {
       <View style={styles.cardContainerStyle}>
         <Text style={styles.titleIntroduce}>{title}</Text>
         <Text style={styles.introduceStyle}>{artist}</Text>
+
+        {/* <MaterialCommunityIcons name="book-open" color={"red"} size={30} /> */}
         {/* <View>
           <Image style={{ width: 30, height: 20 }} sourcr={{ uri: star }} />
         </View> */}
@@ -66,9 +69,10 @@ const styles = StyleSheet.create({
     height: 300,
     width: 210,
     alignSelf: "center",
+    marginTop: 8,
   },
   cardContainerStyle: {
-    // backgroundColor: "white",
+    backgroundColor: "white",
     padding: 10,
     marginHorizontal: 10,
     marginTop: 10,
