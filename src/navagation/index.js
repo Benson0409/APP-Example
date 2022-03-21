@@ -6,7 +6,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-import { View, underlayColor } from "react-native";
+import { View, underlayColor, TouchableOpacity } from "react-native";
 
 import BookScreen from "../Screen/BookScreen";
 import Detail from "../Screen/Detail";
@@ -124,7 +124,7 @@ const MyTabs = () => {
   );
 };
 
-const StackNavigator = () => {
+const StackNavigator = ({ navigation: { goBack } }) => {
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -176,26 +176,26 @@ const StackNavigator = () => {
             color: "white",
           },
           headerRight: () => (
-            <TouchableHighlight underlayColor="yellow">
+            <TouchableOpacity>
               <MaterialCommunityIcons
                 name="bookmark-outline"
                 color={"gray"}
                 onPress={() => alert("Like!")}
                 size={30}
               />
-            </TouchableHighlight>
+            </TouchableOpacity>
           ),
 
-          // headerLeft: () => (
-          //   <MaterialCommunityIcons
-          //     name="bookmark-outline"
-          //     color={"gray"}
-          //     size={30}
-          //     onPress={() => {
-          //       Navigation.goBack();
-          //     }}
-          //   />
-          // ),
+          headerLeft: () => (
+            <TouchableOpacity>
+              <MaterialCommunityIcons
+                name="chevron-left"
+                color={"gray"}
+                size={30}
+                onPress={() => goBack()}
+              />
+            </TouchableOpacity>
+          ),
         })}
       />
     </Stack.Navigator>
