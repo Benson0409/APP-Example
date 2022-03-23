@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
@@ -6,7 +6,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 
-import { View, underlayColor, TouchableOpacity } from "react-native";
+import { View, underlayColor, TouchableOpacity, Image } from "react-native";
 
 import BookScreen from "../Screen/BookScreen";
 import Detail from "../Screen/Detail";
@@ -125,6 +125,7 @@ const MyTabs = () => {
 };
 
 const StackNavigator = ({ navigation: { goBack } }) => {
+  const [bookmark, setBookmark] = useState(false);
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -141,14 +142,14 @@ const StackNavigator = ({ navigation: { goBack } }) => {
           },
 
           headerRight: () => (
-            <TouchableHighlight underlayColor="yellow">
+            <TouchableOpacity>
               <MaterialCommunityIcons
                 name="magnify"
                 color={"gray"}
                 onPress={() => alert("Search!!!")}
                 size={30}
               />
-            </TouchableHighlight>
+            </TouchableOpacity>
           ),
           headerLeft: () => (
             <TouchableHighlight underlayColor="yellow">
@@ -175,14 +176,26 @@ const StackNavigator = ({ navigation: { goBack } }) => {
             fontSize: 20,
             color: "white",
           },
+
           headerRight: () => (
-            <TouchableOpacity>
-              <MaterialCommunityIcons
-                name="bookmark-outline"
-                color={"gray"}
-                onPress={() => alert("Like!")}
-                size={30}
-              />
+            <TouchableOpacity onPress={() => setBookmark(!bookmark)}>
+              {
+                bookmark ? (
+                  <MaterialCommunityIcons
+                    name="bookmark"
+                    color={"#6200EE"}
+                    size={30}
+                  />
+                ) : (
+                  // <Image source={require("../../img/icon_nav_bookmark.png")} />
+                  <MaterialCommunityIcons
+                    name="bookmark-outline"
+                    color={"gray"}
+                    size={30}
+                  />
+                )
+                // <Image source={require("../../img/icon_bookmark.png")} />
+              }
             </TouchableOpacity>
           ),
 
